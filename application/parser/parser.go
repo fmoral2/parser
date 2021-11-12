@@ -31,7 +31,7 @@ func ParseHeader(columns []string, config model.HeaderConfig) (model.Header, err
 	for i, c := range columns {
 		identifier, err := config.GetHeaderIdentifier(c)
 		if err != nil {
-			log.Println("Header " + c + " not identified")
+			log.Println("Header " + c + " will be ignored")
 		}
 
 		pos := i

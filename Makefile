@@ -8,7 +8,7 @@ build:
 	@docker build -t ${IMAGE_NAME} .
 
 run:
-	@docker run --name ${CONTAINER_NAME} ${IMAGE_NAME} 
+	@docker run -e AWS_ACCESS_KEY_ID="${AWS_ACCESS_KEY_ID}" -e AWS_SECRET_ACCESS_KEY="${AWS_SECRET_ACCESS_KEY}" --name ${CONTAINER_NAME} ${IMAGE_NAME} 
 	
 run-tests:
 	@docker run ${IMAGE_NAME} sh -c 'cd /app/application/parser/${dir} && go test'

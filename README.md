@@ -22,8 +22,15 @@ errors.json ( bad data )
 export AWS_ACCESS_KEY_ID=${given-aws-access-key-id}
 export AWS_SECRET_ACCESS_KEY=${given-aws-secret-key}
 ```
+## Running the project locally
 
-## Running the project
+- go to cmd folder and run 
+
+```
+$ go run main.go
+```
+
+## Running the project with Docker
 
 
 Run the unit tests
@@ -41,6 +48,14 @@ $ make run
 ## Database used to store correct data (employees)
 
 DynamoDb
+
+## Architeture and packages in golang format of 
+
+- Application/internal
+- Reposioty to deal wuth Db
+- Cmd to gather and run main
+- Input for data comming and config file
+- Output to store imported employees and error file generated
 ## Bussiness rules applied and why
 
 - All duplicated and null data will not be imported and it will have a console message explaining why and who

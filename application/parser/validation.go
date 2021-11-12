@@ -67,7 +67,7 @@ func ValidateEmployees(employees []model.Employee) []model.Employee {
 			fmt.Println("Salary null: user not imported =>", emp.Name)
 		} else {
 			listValidated = append(listValidated, emp)
-			fmt.Println("Users imported => ", emp.Name)
+			fmt.Println("Users imported in DynamoDb => ", emp.Name)
 		}
 	}
 	//return list of employees imported and create a Json file with the list
