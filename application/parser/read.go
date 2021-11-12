@@ -12,9 +12,7 @@ import (
 )
 
 func ReadFiles() []model.Employee {
-	//open file from root
-
-	r, _ := os.OpenFile("../../rain/config2.json", os.O_RDWR|os.O_CREATE, os.ModePerm)
+	r, _ := os.OpenFile("../../rain/input/config2.json", os.O_RDWR|os.O_CREATE, os.ModePerm)
 	defer r.Close()
 	conf, _ := io.ReadAll(r)
 
@@ -23,7 +21,7 @@ func ReadFiles() []model.Employee {
 	if err := json.Unmarshal([]byte(conf), &config); err != nil {
 		panic(err)
 	}
-	file, err := os.Open("../../rain/roster4.csv")
+	file, err := os.Open("../../rain/input/roster4.csv")
 	if err != nil {
 		panic(err)
 	}
