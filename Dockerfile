@@ -4,6 +4,7 @@ ADD . /rain
 RUN apt-get update
 WORKDIR /rain 
 ENTRYPOINT [ "" ]
+COPY go.mod go.sum ./rain
 COPY . .
 RUN go mod tidy
 CMD ["go", "run", "main.go"]
