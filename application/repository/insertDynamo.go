@@ -3,9 +3,9 @@ package repository
 import (
 	"log"
 
-	"github.com/morlfm/csv_parser/internal/parser"
+	"github.com/morlfm/csv_parser/application/parser"
 
-	"github.com/morlfm/csv_parser/internal/model"
+	"github.com/morlfm/csv_parser/application/model"
 )
 
 func PutItemDynamo(empList []model.Employee) {

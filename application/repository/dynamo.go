@@ -3,7 +3,7 @@ package repository
 import (
 	"strconv"
 
-	"github.com/morlfm/csv_parser/internal/model"
+	"github.com/morlfm/csv_parser/application/model"
 
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"

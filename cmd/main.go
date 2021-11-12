@@ -3,8 +3,8 @@ package main
 import (
 	"log"
 
-	"github.com/morlfm/csv_parser/internal/parser"
-	"github.com/morlfm/csv_parser/internal/repository"
+	"github.com/morlfm/csv_parser/application/parser"
+	"github.com/morlfm/csv_parser/application/repository"
 )
 
 func init() {

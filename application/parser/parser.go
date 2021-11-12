@@ -4,7 +4,7 @@ import (
 	"errors"
 	"log"
 
-	"github.com/morlfm/csv_parser/internal/model"
+	"github.com/morlfm/csv_parser/application/model"
 )
 
 func ParseEmployee(s []string, h model.Header) model.Employee {

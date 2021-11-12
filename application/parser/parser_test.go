@@ -4,8 +4,8 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/morlfm/csv_parser/internal/model"
-	"github.com/morlfm/csv_parser/internal/parser"
+	"github.com/morlfm/csv_parser/application/model"
+	"github.com/morlfm/csv_parser/application/parser"
 
 	"github.com/stretchr/testify/assert"
 )
