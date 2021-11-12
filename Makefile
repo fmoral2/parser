@@ -1,15 +1,17 @@
 include ./config.mk
 
 SHELL := /bin/bash
-IMAGE_NAME := rain/go-test
-CONTAINER_NAME := golang
-CONTAINER_BASE_TEST_DIRECTORY := /Users/moral/go/rain
-
+IMAGE_NAME := golangtest
+CONTAINER_NAME := golang-container
+CONTAINER_BASE_TEST_DIRECTORY := /app/application/parser
 build:
-	@docker build --platform linux/arm64 -t ${IMAGE_NAME} .
+	@docker build -t ${IMAGE_NAME} .
 
-env-up:
-	@docker exec -it ${CONTAINER_NAME} /bin/bash 'cd ${CONTAINER_BASE_TEST_DIRECTORY}/${dir} && go run main.go'
+run:
+	@docker run --name ${CONTAINER_NAME} ${IMAGE_NAME} 
+	
+run-tests:
+	@docker run ${IMAGE_NAME} sh -c 'cd /app/application/parser/${dir} && go test'
 
 env-down:
 	@docker stop ${CONTAINER_NAME}
