@@ -1,4 +1,4 @@
-module csv_parser
+module github.com/morlfm/csv_parser
 
 go 1.17
 

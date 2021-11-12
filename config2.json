@@ -1,0 +1,44 @@
+{
+    "Id": [
+        "ID",
+        "Id",
+        "Number",
+        "number",
+        "emp id",
+        "emp_id",
+        "Emp_Id",
+        "employee_number",
+        "Employee_Number",
+        "Employee Number"
+
+    ],
+    "Name": [
+        "First",
+        "First ",
+        "Last",
+        "Last ",
+        "f. name",
+        "f. name",
+        "l. name",
+        "first_name",
+        "last_name",
+        "first name",
+        "first  name",
+        "last name",
+        "Name"
+    ],
+
+    "Salary":[ 
+        "Salary",
+        "Wage",
+        "wage",
+        "Rate"
+    ],
+    "Email": [
+        "E-mail",
+        "EMAIL",
+        "email",
+        "Email",
+        "e-mail"
+    ]
+}
