@@ -9,7 +9,7 @@ build:
 	@docker build --platform linux/arm64 -t ${IMAGE_NAME} .
 
 env-up:
-	@docker exec -it ${CONTAINER_NAME} /bin/bash 'cd ${CONTAINER_BASE_TEST_DIRECTORY}/${dir} && go run *.go'
+	@docker exec -it ${CONTAINER_NAME} /bin/bash 'cd ${CONTAINER_BASE_TEST_DIRECTORY}/${dir} && go run main.go'
 
 env-down:
 	@docker stop ${CONTAINER_NAME}

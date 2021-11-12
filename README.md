@@ -1,6 +1,6 @@
 ## Rain Test
 
-## Main features
+## Main feature
 
 - Ingest data from third part csv file
 

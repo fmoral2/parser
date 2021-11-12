@@ -77,7 +77,7 @@ func ValidateEmployees(employees []model.Employee) []model.Employee {
 		os.Exit(1)
 	}
 
-	json_file, err := os.Create("../../rain//outputs/imported.json")
+	json_file, err := os.Create("outputs/imported.json")
 	if err != nil {
 		fmt.Println(err)
 	}
