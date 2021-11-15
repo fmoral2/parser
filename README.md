@@ -23,10 +23,16 @@ export AWS_SECRET_ACCESS_KEY=${aws-secret-access-key}
 
 - export your AWS credentials in your terminal accordingly to your OS.
 
-- go to cmd folder and run go main.go or just:
+- To run the project please especify which roster to you want to run:  roster , roster1 , roster2 , roster3 , roster4 
 
 ```
-$ cd cmd && go run main.go
+$ make run-local roster={yourChosenRoster}
+```
+
+- To run tests
+
+```
+$ make run-test
 ```
 
 ## Running the project with Docker
@@ -61,13 +67,13 @@ $ cat ./outputs/errors.json && cd ./application
 $ make build
 ```
 ```
-$ make run 
+$ make run-docker
 ```
 
 - Run the unit tests
 
 ```
-$ make run-tests
+$ make run-tests-docker
 ```
 
 - To stop and delete container after execution:
@@ -95,5 +101,6 @@ DynamoDb
 
 - In the console will be a summary also explaining the steps of the system
 
+- When you run differente csv files the outputs will be new per run to not cause confusion and to keep it simple
 
 

@@ -12,6 +12,8 @@ func init() {
 }
 
 func main() {
+
+	repository.CreateTable()
 	empList := parser.ReadFiles()
 	errors := parser.NotImportedEmployees(empList)
 	parser.ErrorsToJson(errors)

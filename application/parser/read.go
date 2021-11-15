@@ -12,6 +12,7 @@ import (
 )
 
 func ReadFiles() []model.Employee {
+
 	r, _ := os.OpenFile("../input/config2.json", os.O_RDWR|os.O_CREATE, os.ModePerm)
 	defer r.Close()
 	conf, _ := io.ReadAll(r)
@@ -21,7 +22,10 @@ func ReadFiles() []model.Employee {
 	if err := json.Unmarshal([]byte(conf), &config); err != nil {
 		panic(err)
 	}
-	file, err := os.Open("../input/roster4.csv")
+
+	// read csv file path from command line using os.Args
+
+	file, err := os.Open(os.Args[1])
 	if err != nil {
 		panic(err)
 	}
