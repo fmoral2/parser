@@ -70,7 +70,7 @@ func ValidateEmployees(employees []model.Employee) []model.Employee {
 			fmt.Println("Users imported in DynamoDb => ", emp.Name)
 		}
 	}
-	//return list of employees imported and create a Json file with the list
+
 	json_data, err := json.Marshal(listValidated)
 	if err != nil {
 		fmt.Println(err)

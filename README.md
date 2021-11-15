@@ -1,48 +1,76 @@
 ## Rain Test
 
-## Main feature
-
-- Ingest data from third part csv file
-
 ## Dependencies
 
 - Docker
-- Go 1.16 +
+- Go 1.17 +
 - Make
 
 ## Summary
 
-- This project is to create a parser for incoming csv and standardize the file creating 2 outputs and importng to DynamoDb the correct file
+- This project is to create a parser for incoming third part csv and standardize the file creating 2 outputs and importing to DynamoDb the correct file
 import.json ( correct data )
 errors.json ( bad data )
 
 ## Environment variables (direnv)
 
 ```
-export AWS_ACCESS_KEY_ID=${given-aws-access-key-id}
-export AWS_SECRET_ACCESS_KEY=${given-aws-secret-key}
+export AWS_ACCESS_KEY_ID=${aws-access-key-id}
+export AWS_SECRET_ACCESS_KEY=${aws-secret-access-key}
 ```
 ## Running the project locally
 
-- go to cmd folder and run 
+- go to cmd folder and run go main.go or just:
 
 ```
-$ go run main.go
+$ cd cmd && go run main.go
 ```
 
 ## Running the project with Docker
 
+- To run interactively and see outputs folder:
 
-Run the unit tests
+```
+$ make build
+```
+```
+$ make enter-container 
+```
+```
+$ chmod +x /rain 
+```
+```
+$ ./main go run main.go
+```
+
+- To see outputs folder:
+
+```
+$ cat ./outputs/imported.json && cd ./application
+```
+```
+$ cat ./outputs/errors.json && cd ./application
+```
+
+- To run directly:
+
+```
+$ make build
+```
+```
+$ make run 
+```
+
+- Run the unit tests
 
 ```
 $ make run-tests
 ```
 
-Run the project
+- To stop and delete container after execution:
 
 ```
-$ make run
+$ make env-down
 ```
 
 ## Database used to store correct data (employees)
@@ -52,7 +80,7 @@ DynamoDb
 ## Architeture and packages in golang format of 
 
 - Application/internal
-- Reposioty to deal wuth Db
+- Repository to deal with Db
 - Cmd to gather and run main
 - Input for data comming and config file
 - Output to store imported employees and error file generated
