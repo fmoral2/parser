@@ -14,7 +14,8 @@ errors.json ( bad data )
 
 ## Environment variables (direnv)
 
-- Create a .env file in root and add your credentials like that changing ${aws-access-key-id} and ${aws-secret-access-key} to your credentials.
+- Create a .env file in root and add your credentials like that changing ${aws-access-key-id} and ${aws-secret-access-key} to your credentials or if you do not have DynamoDb just ask me for credentials.
+
 ```
 export AWS_ACCESS_KEY_ID=${aws-access-key-id}
 export AWS_SECRET_ACCESS_KEY=${aws-secret-access-key}
@@ -23,7 +24,8 @@ export AWS_SECRET_ACCESS_KEY=${aws-secret-access-key}
 
 - export your AWS credentials in your terminal accordingly to your OS.
 
-- To run the project please especify which roster to you want to run:  roster , roster1 , roster2 , roster3 , roster4 
+- To run the project please especify which roster to you want to run: 
+- roster , roster1 , roster2 , roster3 , roster4 
 
 ```
 $ make run-local roster={yourChosenRoster}
