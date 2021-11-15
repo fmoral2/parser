@@ -14,6 +14,7 @@ errors.json ( bad data )
 
 ## Environment variables (direnv)
 
+- Create a .env file in root and add your credentials like that changing ${aws-access-key-id} and ${aws-secret-access-key} to your credentials.
 ```
 export AWS_ACCESS_KEY_ID=${aws-access-key-id}
 export AWS_SECRET_ACCESS_KEY=${aws-secret-access-key}
