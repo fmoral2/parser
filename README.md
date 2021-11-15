@@ -103,6 +103,6 @@ DynamoDb
 
 - In the console will be a summary also explaining the steps of the system
 
-- When you run differente csv files the outputs will be new per run to not cause confusion and to keep it simple
+- When you run different csv files the outputs will be new per run to not cause data confusion and to keep it simple
 
 
