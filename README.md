@@ -21,6 +21,8 @@ export AWS_SECRET_ACCESS_KEY=${aws-secret-access-key}
 ```
 ## Running the project locally
 
+- export your AWS credential in yout terminal accordingly to your OS.
+
 - go to cmd folder and run go main.go or just:
 
 ```
