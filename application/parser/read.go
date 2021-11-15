@@ -24,7 +24,6 @@ func ReadFiles() []model.Employee {
 	}
 
 	// read csv file path from command line using os.Args
-
 	file, err := os.Open(os.Args[1])
 	if err != nil {
 		panic(err)

@@ -3,6 +3,7 @@ package parser
 import (
 	"errors"
 	"log"
+	"regexp"
 
 	"github.com/morlfm/csv_parser/application/model"
 )
@@ -20,6 +21,10 @@ func ParseEmployee(s []string, h model.Header) model.Employee {
 	emp.Name = s[nameIndex]
 	emp.Email = s[emailIndex]
 	emp.Salary = s[salaryIndex]
+
+	//regex to remove especial characters but not dot or comma
+	re := regexp.MustCompile("[^a-zA-Z0-9\\.\\,]")
+	emp.Salary = re.ReplaceAllString(emp.Salary, " ")
 
 	return emp
 }
