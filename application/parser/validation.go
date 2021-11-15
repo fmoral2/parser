@@ -19,34 +19,33 @@ func NotImportedEmployees(employees []model.Employee) []model.Employee {
 			listErrors = append(listErrors, emp)
 		}
 	}
-
 	return listErrors
 }
 
 func EmailDuplicated(list []model.Employee) map[string]bool {
-	dupList := make(map[string]bool)
+	dupMap := make(map[string]bool)
 	emailMap := make(map[string]bool)
 	for _, e := range list {
-		if emailMap[e.Email] && e.Email != "" {
+		if _, ok := emailMap[e.Email]; len(e.Email) > 0 && ok {
 			log.Printf("Email duplicated found = %s ", e.Email)
-			dupList[e.Email] = true
+			dupMap[e.Email] = true
 		}
 		emailMap[e.Email] = true
 	}
-	return dupList
+	return dupMap
 }
 
 func IdDuplicated(list []model.Employee) map[string]bool {
-	dupIdList := make(map[string]bool)
+	dupMap := make(map[string]bool)
 	idMap := make(map[string]bool)
 	for _, e := range list {
-		if idMap[e.Id] && e.Id != "" {
+		if _, ok := idMap[e.Id]; len(e.Id) > 0 && ok {
 			log.Printf("Id duplicated found = %s ", e.Id)
-			dupIdList[e.Id] = true
+			dupMap[e.Id] = true
 		}
 		idMap[e.Id] = true
 	}
-	return dupIdList
+	return dupMap
 }
 
 func ValidateEmployees(employees []model.Employee) []model.Employee {
