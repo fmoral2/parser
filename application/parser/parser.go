@@ -22,9 +22,12 @@ func ParseEmployee(s []string, h model.Header) model.Employee {
 	emp.Email = s[emailIndex]
 	emp.Salary = s[salaryIndex]
 
-	//regex to remove especial characters but not dot or comma
 	re := regexp.MustCompile("[^a-zA-Z0-9\\.\\,]")
 	emp.Salary = re.ReplaceAllString(emp.Salary, " ")
+
+	// regex to remove leters
+	re = regexp.MustCompile("[a-zA-Z]")
+	emp.Id = re.ReplaceAllString(emp.Id, "")
 
 	return emp
 }
@@ -57,5 +60,6 @@ func ParseHeader(columns []string, config model.HeaderConfig) (model.Header, err
 	if header.Id == nil || header.Name == nil || header.Email == nil || header.Salary == nil {
 		return header, errors.New("missing headers")
 	}
+
 	return header, nil
 }

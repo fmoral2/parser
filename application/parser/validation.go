@@ -66,7 +66,7 @@ func ValidateEmployees(employees []model.Employee) []model.Employee {
 			fmt.Println("Salary null: user not imported =>", emp.Name)
 		} else {
 			listValidated = append(listValidated, emp)
-			fmt.Println("Users imported in DynamoDb => ", emp.Name)
+			fmt.Println("Users imported or already imported at DynamoDb => ", emp.Name)
 		}
 	}
 
