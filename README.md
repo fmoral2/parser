@@ -101,7 +101,7 @@ DynamoDb
 
 - The correct data is imported to DynamoDb to be processed
 
-- In the console will be a summary also explaining the steps of the system
+- In the console will be a summary of logs explaining the steps of the application
 
 - When you run different csv files the outputs will be new per run to not cause data confusion and to keep it simple
 
