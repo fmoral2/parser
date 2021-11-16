@@ -22,10 +22,10 @@ func ParseEmployee(s []string, h model.Header) model.Employee {
 	emp.Email = s[emailIndex]
 	emp.Salary = s[salaryIndex]
 
+	// regex to treat special characters
 	re := regexp.MustCompile("[^a-zA-Z0-9\\.\\,]")
 	emp.Salary = re.ReplaceAllString(emp.Salary, " ")
 
-	// regex to remove leters
 	re = regexp.MustCompile("[a-zA-Z]")
 	emp.Id = re.ReplaceAllString(emp.Id, "")
 
