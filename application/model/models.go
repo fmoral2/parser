@@ -9,13 +9,6 @@ type Employee struct {
 	Salary string
 }
 
-type DbEmployees struct {
-	Id     string `json:"Id"`
-	Name   string `json:"Name"`
-	Email  string `json:"Email"`
-	Salary string `json:"Salary"`
-}
-
 type Header struct {
 	Id     *int
 	Name   *int

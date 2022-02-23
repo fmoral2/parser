@@ -2,6 +2,7 @@
     "Id": [
         "ID",
         "Id",
+        "id",
         "Number",
         "number",
         "emp id",
@@ -10,7 +11,6 @@
         "employee_number",
         "Employee_Number",
         "Employee Number"
-
     ],
     "Name": [
         "First",
@@ -25,9 +25,9 @@
         "first name",
         "first  name",
         "last name",
-        "Name"
+        "Name",
+        "name"
     ],
-
     "Salary":[ 
         "Salary",
         "Wage",

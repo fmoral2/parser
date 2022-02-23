@@ -4,6 +4,7 @@ go 1.17
 
 require (
 	github.com/aws/aws-sdk-go v1.41.4
+	github.com/streadway/amqp v1.0.0
 	github.com/stretchr/testify v1.7.0
 )
 

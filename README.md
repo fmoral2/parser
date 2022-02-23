@@ -25,7 +25,7 @@ export AWS_SECRET_ACCESS_KEY=${aws-secret-access-key}
 - export your AWS credentials in your terminal accordingly to your OS.
 
 - To run the project please especify which roster to you want to run: 
-- roster , roster1 , roster2 , roster3 , roster4 
+- roster , roster1 , roster2 , roster3 , roster4 OR employees from queue: empsRabbit
 
 ```
 $ make run-local roster={yourChosenRoster}

@@ -21,10 +21,14 @@ env-down:
 	@docker stop ${CONTAINER_NAME}
 	@docker rm ${CONTAINER_NAME}
 
+
 ## Local
+run-test:
+	@export AWS_ACCESS_KEY_ID="${AWS_ACCESS_KEY_ID}"
+	@export AWS_SECRET_ACCESS_KEY="${AWS_SECRET_ACCESS_KEY}"
+	@cd application/parser && go test
 
 run-local:
+	@export AWS_ACCESS_KEY_ID="${AWS_ACCESS_KEY_ID}"
+	@export AWS_SECRET_ACCESS_KEY="${AWS_SECRET_ACCESS_KEY}"
 	@cd cmd && go run main.go ../input/${roster}.csv
-
-run-test:
-	@cd application/parser && go test
