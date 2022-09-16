@@ -23,7 +23,7 @@ func Consumer() {
 	defer ch.Close()
 
 	msgs, err := ch.Consume(
-		"TestQueueRain",
+		"TestQueue",
 		"",
 		true,
 		false,
@@ -51,7 +51,6 @@ func Consumer() {
 	}()
 	fmt.Println(" [*] - Waiting for messages")
 
-	// blocking  until ch it is satisfied
 	<-forever
 
 }

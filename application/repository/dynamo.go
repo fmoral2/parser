@@ -10,14 +10,12 @@ import (
 
 var Dynamo *dynamodb.DynamoDB
 
-// connectDynamo...
 func ConnectDynamo() (db *dynamodb.DynamoDB) {
 	return dynamodb.New(session.Must(session.NewSession(&aws.Config{
 		Region: &model.RegionName,
 	})))
 }
 
-// CreateTable...
 func CreateTable() error {
 	_, err := Dynamo.CreateTable(&dynamodb.CreateTableInput{
 		AttributeDefinitions: []*dynamodb.AttributeDefinition{
@@ -39,7 +37,6 @@ func CreateTable() error {
 	return err
 }
 
-// PutItem...
 func PutItem(usersEmp model.Employee) error {
 	_, err := Dynamo.PutItem(&dynamodb.PutItemInput{
 		Item: map[string]*dynamodb.AttributeValue{
