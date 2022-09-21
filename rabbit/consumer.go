@@ -2,10 +2,10 @@ package rabbit
 
 import (
 	"fmt"
+	"github.com/morlfm/csv_parser/application/ports"
+	"github.com/streadway/amqp"
 	"log"
 	"os"
-
-	"github.com/streadway/amqp"
 )
 
 func Consumer() {
@@ -36,21 +36,23 @@ func Consumer() {
 		fmt.Println("unable to consume this message")
 	}
 
-	forever := make(chan bool)
+	forever := make(chan bool, 1)
 	go func() {
-		file, err := os.Create("../input/message.json")
-		if err != nil {
-			fmt.Println(err)
+		file, errs := os.Create("input/message.json")
+		if errs != nil {
+			fmt.Println(errs)
 		}
 		defer file.Close()
 		for d := range msgs {
 			fmt.Printf("Received Message: %s\n", d.Body)
-			file.Write(d.Body)
+			_, _ = file.Write(d.Body)
 		}
 
 	}()
-	fmt.Println(" [*] - Waiting for messages")
+	fmt.Println("Waiting messages")
 
+	JsonToCsv()
+	ports.Entry()
 	<-forever
 
 }

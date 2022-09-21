@@ -11,25 +11,30 @@ import (
 	"github.com/morlfm/csv_parser/application/model"
 )
 
-func ReadFiles() []model.Employee {
+func ReadFiles(s string) []model.Employee {
 
-	r, _ := os.OpenFile("../input/config2.json", os.O_RDWR|os.O_CREATE, os.ModePerm)
+	message, err := os.Open(s)
+	if err != nil {
+		panic(err)
+	}
+
+	r, _ := os.OpenFile("input/config2.json", os.O_RDWR|os.O_CREATE, os.ModePerm)
 	defer r.Close()
 	conf, _ := io.ReadAll(r)
 
 	var config model.HeaderConfig
 
-	if err := json.Unmarshal([]byte(conf), &config); err != nil {
-		panic(err)
+	if errs := json.Unmarshal([]byte(conf), &config); err != nil {
+		panic(errs)
 	}
 
 	// read csv file path from command line using os.Args
-	file, err := os.Open(os.Args[1])
-	if err != nil {
-		panic(err)
-	}
+	//file, err := os.Open(os.Args[1])
+	//if err != nil {
+	//	panic(err)
+	//}
 
-	rf := csv.NewReader(file)
+	rf := csv.NewReader(message)
 
 	headers, err := rf.Read()
 	if err != nil {

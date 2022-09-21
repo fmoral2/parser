@@ -28,17 +28,17 @@
         "Name",
         "name"
     ],
-    "Salary":[ 
-        "Salary",
-        "Wage",
-        "wage",
-        "Rate"
-    ],
     "Email": [
         "E-mail",
         "EMAIL",
         "email",
         "Email",
         "e-mail"
+    ],
+    "Salary":[
+        "Salary",
+        "Wage",
+        "wage",
+        "Rate"
     ]
 }

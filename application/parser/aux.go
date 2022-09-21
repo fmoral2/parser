@@ -13,7 +13,7 @@ func ErrorsToJson(listErrors []model.Employee) {
 	if err != nil {
 		fmt.Println(err)
 	}
-	file, err := os.Create("../outputs/errors.json")
+	file, err := os.Create("outputs/errors.json")
 	if err != nil {
 		fmt.Println(err)
 	}
