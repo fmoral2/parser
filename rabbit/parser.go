@@ -10,9 +10,8 @@ import (
 )
 
 type EmployeesQueue struct {
-	Name string `json:"name"`
-	ID   string `json:"id"`
-	//Location string  `json:"location"`
+	Name string  `json:"name"`
+	ID   string  `json:"id"`
 	Role string  `json:"role"`
 	Wage float64 `json:"wage"`
 }
@@ -50,7 +49,6 @@ func JsonToCsv() {
 		var record []string
 		record = append(record, c.Name,
 			c.ID,
-			//c.Location,
 			c.Role,
 			strconv.FormatFloat(c.Wage, 'f', 2, 64))
 
