@@ -1,9 +1,10 @@
-module github.com/morlfm/csv_parser
+module github.com/fmoral2/parser
 
-go 1.18
+go 1.20
 
 require (
 	github.com/aws/aws-sdk-go v1.41.4
+	github.com/google/uuid v1.3.1
 	github.com/streadway/amqp v1.0.0
 	github.com/stretchr/testify v1.7.0
 )

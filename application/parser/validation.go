@@ -6,7 +6,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/morlfm/csv_parser/application/model"
+	"github.com/fmoral2/parser/application/model"
 )
 
 func NotImportedEmployees(employees []model.Employee) []model.Employee {

@@ -15,12 +15,14 @@ run-docker:
 	@docker run -e AWS_ACCESS_KEY_ID="${AWS_ACCESS_KEY_ID}" -e AWS_SECRET_ACCESS_KEY="${AWS_SECRET_ACCESS_KEY}" --name ${CONTAINER_NAME} ${IMAGE_NAME}
 		
 run-tests-docker:
-	@docker run ${IMAGE_NAME} sh -c 'cd /rain/application/parser/${dir} && go test'
+	@docker run ${IMAGE_NAME} sh -c ''
 
 env-down:
 	@docker stop ${CONTAINER_NAME}
 	@docker rm ${CONTAINER_NAME}
 
+env-up:
+	@docker compose up -d
 
 ## Local
 run-test:

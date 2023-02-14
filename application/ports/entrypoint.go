@@ -1,9 +1,10 @@
 package ports
 
 import (
-	"github.com/morlfm/csv_parser/application/parser"
-	"github.com/morlfm/csv_parser/application/repository"
 	"log"
+
+	"github.com/fmoral2/parser/application/parser"
+	"github.com/fmoral2/parser/application/repository"
 )
 
 func Entry() {

@@ -3,9 +3,9 @@ package repository
 import (
 	"log"
 
-	"github.com/morlfm/csv_parser/application/parser"
+	"github.com/fmoral2/parser/application/parser"
 
-	"github.com/morlfm/csv_parser/application/model"
+	"github.com/fmoral2/parser/application/model"
 )
 
 func CreateTableDynamoDb() {

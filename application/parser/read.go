@@ -8,7 +8,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/morlfm/csv_parser/application/model"
+	"github.com/fmoral2/parser/application/model"
 )
 
 func ReadFiles(s string) []model.Employee {

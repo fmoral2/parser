@@ -2,13 +2,14 @@ package rabbit
 
 import (
 	"fmt"
-	"github.com/streadway/amqp"
 	"log"
 	"os"
+
+	"github.com/streadway/amqp"
 )
 
 func Consumer() {
-	conn, err := amqp.Dial("amqp://guest:guest@localhost:5672/")
+	conn, err := amqp.Dial("amqp://guest:guest@rabbitmq:5672/")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -33,9 +34,9 @@ func Consumer() {
 		fmt.Println("unable to consume this message")
 	}
 
-	file, errs := os.OpenFile("input/message.json", os.O_RDWR|os.O_CREATE, 0755)
-	if errs != nil {
-		fmt.Println(errs)
+	file, err := os.OpenFile("./input/message.json", os.O_RDWR|os.O_CREATE, 0755)
+	if err != nil {
+		fmt.Println(err)
 	}
 	defer file.Close()
 
@@ -48,6 +49,7 @@ func Consumer() {
 			_, _ = file.Write(msg.Body)
 		}
 	}()
+
 	JsonToCsv()
 
 	<-forever

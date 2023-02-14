@@ -4,7 +4,7 @@ import (
 	"encoding/csv"
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"os"
 	"strconv"
 )
@@ -17,8 +17,10 @@ type EmployeesQueue struct {
 }
 
 func JsonToCsv() {
-	file, err := ioutil.ReadFile("input/message.json")
+	f, _ := os.Open("./input/message.json")
+	file, err := io.ReadAll(f)
 	if err != nil {
+		fmt.Println("func JsonToCsv: ", err)
 		return
 	}
 
@@ -31,20 +33,18 @@ func JsonToCsv() {
 		return
 	}
 
-	csvFile, err := os.Create("input/empsRabbit.csv")
+	csvFile, err := os.Create("./input/empQueue.csv")
 	if err != nil {
 		fmt.Println(err)
 	}
 	defer csvFile.Close()
 
 	w := csv.NewWriter(csvFile)
-	// creating headers
 	header := []string{"name", "id", "role", "wage"}
 	if err = w.Write(header); err != nil {
 		return
 	}
 
-	// creating csv records
 	for _, c := range emps {
 		var record []string
 		record = append(record, c.Name,

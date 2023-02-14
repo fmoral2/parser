@@ -5,11 +5,10 @@ import (
 	"log"
 	"regexp"
 
-	"github.com/morlfm/csv_parser/application/model"
+	"github.com/fmoral2/parser/application/model"
 )
 
 func ParseEmployee(s []string, h model.Header) model.Employee {
-
 	var emp model.Employee
 
 	idIndex := *h.Id
@@ -33,7 +32,6 @@ func ParseEmployee(s []string, h model.Header) model.Employee {
 }
 
 func ParseHeader(columns []string, config model.HeaderConfig) (model.Header, error) {
-
 	var header model.Header
 
 	for i, c := range columns {

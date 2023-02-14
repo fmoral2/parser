@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - m_network
+    restart: on-failure
+    ports:
+      - "5673:5672"
+      - "15672:15672"
+    environment:
+      KAFKA_BROKER: broker:9092
+      ZOOKEEPER: zookeeper:2181
+      RABBITMQ_HOST: rabbitmq:5672
+
+networks:
+  m_network:
+    driver: bridge
+    name: m_network

@@ -1,7 +1,7 @@
 package repository
 
 import (
-	"github.com/morlfm/csv_parser/application/model"
+	"github.com/fmoral2/parser/application/model"
 
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"

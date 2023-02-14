@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/morlfm/csv_parser/application/model"
+	"github.com/fmoral2/parser/application/model"
 )
 
 func ErrorsToJson(listErrors []model.Employee) {
